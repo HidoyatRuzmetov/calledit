@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="CalledIt icon — the swarm gathers at 63">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0A0C1A"/>
+      <stop offset="100%" stop-color="#1A2050"/>
+    </linearGradient>
+    <radialGradient id="bloom" cx="63%" cy="46%" r="55%">
+      <stop offset="0%" stop-color="#FFC94D" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#FFC94D" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="16" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowS" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" rx="196" fill="url(#bg)"/>
+  <rect width="1024" height="1024" rx="196" fill="url(#bloom)"/>
+  <rect x="12" y="12" width="1000" height="1000" rx="188" fill="none" stroke="#FFFFFF" stroke-opacity="0.09" stroke-width="4"/>
+
+  <!-- axis -->
+  <path d="M140 660H884" stroke="#FFFFFF" stroke-opacity="0.14" stroke-width="8" stroke-linecap="round"/>
+  <path d="M140 636v48M512 640v40M884 636v48" stroke="#FFFFFF" stroke-opacity="0.16" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- the swarm, drifting toward the truth -->
+  <g fill="#FFC94D" filter="url(#glowS)">
+    <circle cx="242" cy="330" r="11" opacity="0.5"/>
+    <circle cx="330" cy="252" r="9" opacity="0.45"/>
+    <circle cx="410" cy="366" r="13" opacity="0.6"/>
+    <circle cx="474" cy="270" r="10" opacity="0.55"/>
+    <circle cx="540" cy="352" r="12" opacity="0.7"/>
+    <circle cx="598" cy="268" r="11" opacity="0.7"/>
+    <circle cx="646" cy="356" r="14" opacity="0.85"/>
+    <circle cx="700" cy="290" r="12" opacity="0.9"/>
+    <circle cx="756" cy="368" r="10" opacity="0.7"/>
+    <circle cx="806" cy="312" r="8" opacity="0.5"/>
+    <circle cx="188" cy="420" r="8" opacity="0.35"/>
+    <circle cx="876" cy="416" r="9" opacity="0.4"/>
+  </g>
+
+  <!-- the gathered truth at 63 -->
+  <g filter="url(#glow)">
+    <circle cx="609" cy="660" r="58" fill="#FFC94D"/>
+  </g>
+  <circle cx="609" cy="660" r="58" fill="none" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="8"/>
+  <text x="609" y="533" text-anchor="middle" font-family="'Bricolage Grotesque', Georgia, sans-serif"
+        font-weight="800" font-size="150" fill="#F4F2EC">63</text>
+
+  <!-- your cool-blue call, just off -->
+  <circle cx="472" cy="660" r="26" fill="#6F8DFF" filter="url(#glowS)"/>
+  <path d="M498 660H551" stroke="#6F8DFF" stroke-opacity="0.9" stroke-width="9" stroke-linecap="round" stroke-dasharray="2 20"/>
+
+  <text x="512" y="874" text-anchor="middle" font-family="'Bricolage Grotesque', Georgia, sans-serif"
+        font-weight="800" font-size="88" letter-spacing="10" fill="#F4F2EC">CALLEDIT</text>
+</svg>

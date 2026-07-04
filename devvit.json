@@ -1,0 +1,86 @@
+{
+  "$schema": "https://developers.reddit.com/schema/config-file.v1.json",
+  "name": "playcalledit",
+  "marketingAssets": {
+    "icon": "assets/icon-1024.png"
+  },
+  "post": {
+    "dir": "dist/client",
+    "entrypoints": {
+      "default": {
+        "entry": "splash.html",
+        "height": "tall"
+      },
+      "game": {
+        "entry": "game.html"
+      }
+    }
+  },
+  "server": {
+    "dir": "dist/server",
+    "entry": "index.cjs"
+  },
+  "permissions": {
+    "redis": true,
+    "realtime": true,
+    "reddit": {
+      "enable": true,
+      "scope": "moderator",
+      "asUser": ["SUBMIT_COMMENT"]
+    }
+  },
+  "scheduler": {
+    "tasks": {
+      "daily_open": {
+        "endpoint": "/internal/jobs/daily-open",
+        "cron": "0 15 * * *"
+      },
+      "daily_reveal": {
+        "endpoint": "/internal/jobs/daily-reveal",
+        "cron": "0 11 * * *"
+      }
+    }
+  },
+  "menu": {
+    "items": [
+      {
+        "label": "CalledIt — create today's post now",
+        "description": "Open the next day immediately",
+        "location": "subreddit",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/post-now"
+      },
+      {
+        "label": "CalledIt — review question queue",
+        "description": "Approve or reject community questions",
+        "location": "subreddit",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/review-queue"
+      },
+      {
+        "label": "CalledIt — force the Reveal (test)",
+        "description": "Lock and reveal the open day",
+        "location": "subreddit",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/force-reveal"
+      },
+      {
+        "label": "CalledIt — reload question bank",
+        "description": "Re-seed the house questions",
+        "location": "subreddit",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/reload-bank"
+      }
+    ]
+  },
+  "forms": {
+    "reviewQueue": "/internal/form/review-queue"
+  },
+  "triggers": {
+    "onAppInstall": "/internal/triggers/on-app-install"
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch"
+  }
+}

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 150" role="img" aria-label="CALLEDIT wordmark">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0A0C1A"/>
+      <stop offset="100%" stop-color="#161B40"/>
+    </linearGradient>
+    <filter id="g" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="640" height="150" rx="18" fill="url(#bg)"/>
+  <g fill="#FFC94D" filter="url(#g)">
+    <circle cx="500" cy="44" r="4" opacity="0.55"/>
+    <circle cx="527" cy="62" r="5" opacity="0.75"/>
+    <circle cx="556" cy="42" r="6" opacity="0.9"/>
+    <circle cx="586" cy="60" r="7"/>
+    <circle cx="612" cy="38" r="5" opacity="0.7"/>
+    <circle cx="470" cy="60" r="3" opacity="0.4"/>
+  </g>
+  <text x="36" y="98" font-family="'Bricolage Grotesque', Georgia, sans-serif" font-weight="800"
+        font-size="64" letter-spacing="4" fill="#F4F2EC">CALLEDIT</text>
+  <text x="38" y="128" font-family="'Space Grotesk', ui-sans-serif, sans-serif" font-weight="500"
+        font-size="16" letter-spacing="6" fill="#7B82A3">CALL THE HIVE</text>
+</svg>

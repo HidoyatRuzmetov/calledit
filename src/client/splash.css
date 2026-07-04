@@ -1,0 +1,222 @@
+/* S0 — the in-feed card. First judged pixel: calm indigo, living gold motes. */
+
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('./fonts/bricolage-grotesque-latin-800-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('./fonts/space-grotesk-latin-500-normal.woff2') format('woff2');
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: #0a0c1a;
+  font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  color: #f4f2ec;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.card {
+  position: relative;
+  width: min(560px, 100%);
+  height: 100%;
+  max-height: 480px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  padding: 22px 22px 18px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      120% 90% at 50% -10%,
+      rgba(255, 201, 77, 0.08),
+      transparent 55%
+    ),
+    linear-gradient(180deg, #0a0c1a, #151a3a);
+}
+
+.motes i {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffc94d;
+  box-shadow: 0 0 12px 3px rgba(255, 201, 77, 0.55);
+  opacity: 0.7;
+  animation: drift 9s ease-in-out infinite;
+}
+.motes i:nth-child(1) {
+  left: 8%;
+  top: 22%;
+  animation-delay: 0s;
+}
+.motes i:nth-child(2) {
+  left: 22%;
+  top: 64%;
+  animation-delay: -1.2s;
+}
+.motes i:nth-child(3) {
+  left: 33%;
+  top: 30%;
+  animation-delay: -2.4s;
+  width: 4px;
+  height: 4px;
+}
+.motes i:nth-child(4) {
+  left: 46%;
+  top: 74%;
+  animation-delay: -3.1s;
+}
+.motes i:nth-child(5) {
+  left: 58%;
+  top: 26%;
+  animation-delay: -4.3s;
+  width: 8px;
+  height: 8px;
+}
+.motes i:nth-child(6) {
+  left: 70%;
+  top: 60%;
+  animation-delay: -5s;
+}
+.motes i:nth-child(7) {
+  left: 82%;
+  top: 34%;
+  animation-delay: -5.9s;
+  width: 4px;
+  height: 4px;
+}
+.motes i:nth-child(8) {
+  left: 90%;
+  top: 70%;
+  animation-delay: -6.7s;
+}
+.motes i:nth-child(9) {
+  left: 14%;
+  top: 84%;
+  animation-delay: -7.4s;
+  width: 5px;
+  height: 5px;
+}
+.motes i:nth-child(10) {
+  left: 66%;
+  top: 86%;
+  animation-delay: -8.2s;
+}
+.motes i:nth-child(11) {
+  left: 40%;
+  top: 12%;
+  animation-delay: -3.7s;
+  width: 5px;
+  height: 5px;
+}
+.motes i:nth-child(12) {
+  left: 76%;
+  top: 12%;
+  animation-delay: -1.8s;
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.55;
+  }
+  25% {
+    transform: translate(14px, -12px);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate(-8px, 10px);
+    opacity: 0.6;
+  }
+  75% {
+    transform: translate(10px, 14px);
+    opacity: 0.85;
+  }
+}
+
+.top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.brand {
+  font-family: 'Bricolage Grotesque', Georgia, sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: 0.06em;
+}
+.day {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: #ffc94d;
+}
+
+.q {
+  font-family: 'Bricolage Grotesque', Georgia, sans-serif;
+  font-weight: 800;
+  font-size: clamp(26px, 6.4vw, 40px);
+  line-height: 1.1;
+  margin: auto 0;
+  text-wrap: balance;
+  z-index: 1;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  z-index: 1;
+}
+.hive {
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: #ffc94d;
+}
+.play {
+  font-family: 'Space Grotesk', ui-sans-serif, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #141021;
+  background: linear-gradient(180deg, #ffd97a, #ffc043);
+  border: none;
+  border-radius: 999px;
+  min-height: 52px;
+  padding: 0 30px;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(255, 201, 77, 0.35);
+  transition: transform 120ms ease;
+}
+.play:active {
+  transform: translateY(2px) scale(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motes i {
+    animation: none;
+  }
+}
