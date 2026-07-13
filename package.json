@@ -32,7 +32,7 @@
     "@fontsource/ibm-plex-mono": "^5.2.7",
     "@fontsource/instrument-serif": "^5.2.8",
     "@fontsource/space-grotesk": "^5.2.10",
-    "@types/node": "^22.19.19",
+    "@types/node": "^22.20.1",
     "devvit": "^0.13.6",
     "eslint": "10.4.1",
     "globals": "17.7.0",
